@@ -47,11 +47,7 @@ graph LR
 - **🥗 Precision Nutrition**: BMI-aligned, hormone-supportive Mediterranean diet plans.
 - **📈 Analytics Dashboard**: Track department-wide risk distribution and patient outcomes.
 
-## 🚥 5. Deployment & Setup
-
-### **🚀 One-Click Launch (Windows)**
-For the fastest setup, double-click **`run_cardiowise.bat`** in the root directory. This script automates environment checks, installs dependencies, and launches all services for you.
-
+## 🚥 5. Deployment
 - **Live Streamlit App**: [https://cardiowiseai-cq3k7spfk5ukanev47pghf.streamlit.app/](https://cardiowiseai-cq3k7spfk5ukanev47pghf.streamlit.app/)
 
 
