@@ -1,0 +1,6 @@
+patient_name,age,height,weight,ap_hi,ap_lo,cholesterol,gluc,smoke,alco,active,pregnancy_history
+Rebecca Allen,50,161,66,132,85,2,2,1,0,0,1
+Sandra Young,44,163,68,126,82,1,1,0,0,1,1
+Donna King,69,156,64,158,96,3,3,1,1,0,0,0
+Catherine Wright,31,168,63,106,70,1,1,0,0,1,0
+Pamela Lopez,57,160,70,142,88,2,2,1,0,0,1

@@ -1,0 +1,6 @@
+patient_name,age,height,weight,ap_hi,ap_lo,cholesterol,gluc,smoke,alco,active,pregnancy_history
+Jessica Taylor,33,163,59,108,72,1,1,0,0,1,1
+Carol Anderson,58,160,75,148,90,3,2,1,0,0,1
+Michelle Rodriguez,41,166,66,122,80,2,1,1,0,1,0
+Barbara Thomas,72,154,60,165,98,3,3,1,1,0,0,0
+Susan Moore,39,167,71,115,75,1,1,0,0,1,1

@@ -1,0 +1,6 @@
+patient_name,age,height,weight,ap_hi,ap_lo,cholesterol,gluc,smoke,alco,active,pregnancy_history
+Laura Jackson,46,164,67,128,84,2,2,1,0,1,1
+Karen Clark,63,159,73,152,93,3,3,1,1,0,0,0
+Ashley Lewis,28,171,62,102,68,1,1,0,0,1,0
+Helen Walker,54,162,69,138,86,2,2,1,0,0,1,0
+Diane Hall,36,165,64,112,74,1,1,0,0,1,1

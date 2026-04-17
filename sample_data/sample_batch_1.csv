@@ -1,0 +1,6 @@
+patient_name,age,height,weight,ap_hi,ap_lo,cholesterol,gluc,smoke,alco,active,pregnancy_history
+Sarah Johnson,45,165,70,120,80,1,1,0,0,1,1
+Emily Davis,38,160,65,110,70,2,1,1,0,1,0
+Maria Garcia,52,155,68,145,85,3,2,1,0,0,1
+Lisa Chen,29,170,58,105,65,1,1,0,0,1,0
+Jennifer Brown,61,158,72,160,95,3,3,1,1,0,1,1
