@@ -53,7 +53,7 @@ graph LR
 For the fastest setup, double-click **`run_cardiowise.bat`** in the root directory. This script automates environment checks, installs dependencies, and launches all services for you.
 
 - **Live Streamlit App**: [https://cardiowiseai-cq3k7spfk5ukanev47pghf.streamlit.app/](https://cardiowiseai-cq3k7spfk5ukanev47pghf.streamlit.app/)
-- **Premium React Dashboard**: `http://localhost:3000` (Local Access)
+
 
 
 
