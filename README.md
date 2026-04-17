@@ -52,10 +52,10 @@ graph LR
 ### **🚀 One-Click Launch (Windows)**
 For the fastest setup, double-click **`run_cardiowise.bat`** in the root directory. This script automates environment checks, installs dependencies, and launches all services for you.
 
-### **🌐 Cloud & Local Links**
-- **Premium React Dashboard**: `http://localhost:3000`
-- **Streamlit Cloud Link**: [Waiting for Deployment URL]
-- **API Backend**: `http://localhost:5000`
+- **Live Streamlit App**: [https://cardiowiseai-cq3k7spfk5ukanev47pghf.streamlit.app/](https://cardiowiseai-cq3k7spfk5ukanev47pghf.streamlit.app/)
+- **Premium React Dashboard**: `http://localhost:3000` (Local Access)
+
+
 
 ---
 **Medical Disclaimer**: CardioWise AI is designed for educational and clinical screening support. It does not replace professional medical diagnosis. Always consult a board-certified cardiologist.
