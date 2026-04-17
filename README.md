@@ -1,77 +1,73 @@
 # CardioWise AI: Advanced Heart Disease Risk Prediction for Women
 
-![CardioWise Banner](https://img.shields.io/badge/CardioWise-AI--Powered-blue?style=for-the-badge&logo=heart)
+![Banner](https://img.shields.io/badge/CardioWise-AI--Powered-blue?style=for-the-badge&logo=heart)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-success?style=for-the-badge)
-![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20Flask%20%7C%20XGBoost-9cf?style=for-the-badge)
 
-CardioWise AI is a next-generation clinical decision support system designed specifically to assess cardiovascular risk in women. By integrating state-of-the-art **XGBoost machine learning** with gender-specific clinical indicators (Menopause status, PCOS indicators, Pregnancy history, and Thyroid risk), CardioWise provides a 360-degree view of heart health.
+**CardioWise AI** is a state-of-the-art clinical decision support system that leverages an **XGBoost machine learning** model to provide gender-specific cardiovascular risk stratification for women. By analyzing the `cardio_train.csv` dataset through a research-driven **Jupyter Notebook** pipeline, the system goes beyond traditional metrics to automatically derive and integrate critical "Women-specific factors" such as **Menopause status**, **PCOS indicators**, **Thyroid risk**, and **Pregnancy history**. The architecture features a production-ready **Flask backend** for model inference, a **SQLite database** schema for historical assessment tracking, and a premium **React frontend** for a high-performance clinical experience, complemented by a lightweight **Streamlit dashboard** ([http://localhost:8501](http://localhost:8501)) for rapid data-centric screening.
 
-## 🚀 Key Features
+## 📌 1. Problem Statement
+Cardiovascular disease (CVD) is the leading cause of death for women globally, yet it is often underdiagnosed or misdiagnosed. Traditional heart risk calculators (like Framingham or ASCVD) frequently overlook gender-specific risk factors such as pregnancy history, PCOS, and menopause-related hormonal changes. 
 
-- **Gender-Specific Risk Assessment**: Incorporates hormonal and reproductive health indicators often overlooked in traditional heart risk calculators.
-- **Premium Clinical Dashboard**: A sleek, high-performance React interface for individual patient screening.
-- **Batch Processing**: Upload CSV datasets to process multiple patient records simultaneously for population health research.
-- **AI-Powered Insights**: Feature importance visualizations to show patients exactly which factors are impacting their risk scores.
-- **Personalized Clinical Reports**: Generates automated intervention protocols, medication advice, and Mediterranean-style diet plans.
-- **Analytics & History**: Track patient risk trends and application performance over time.
+**CardioWise AI** solves this by providing a targeted clinical decision support system that integrates both traditional vitals and women-specific biological markers to provide a more accurate, holistic cardiovascular risk stratification.
 
-## 🛠️ Technology Stack
+## 🧠 2. Model Explanation & Research
+The core of CardioWise is a high-performance **XGBoost Classifier** trained on the official Cardiovascular Disease dataset, specifically optimized for women's health profiles.
 
-- **Frontend**: React 18, CSS3 (Modern Glassmorphism & SaaS Aesthetics).
-- **Backend**: Python 3.9+, Flask (API Services).
-- **Machine Learning**: XGBoost (Classifier), Scikit-Learn (Pipelines & Scalers), Joblib.
-- **Alternative UI**: Streamlit (Lightweight data-centric dashboard).
-- **Database**: SQLite3 (Historical data persistence).
+- **Gender-Specific Logic**: The system derives key clinical features like *is_menopausal*, *has_pcos*, and *has_thyroid_issue* from raw vitals, ensuring these high-impact variables contribute to the final prediction.
+- **Explainability (XAI)**: We utilize feature importance analysis (simulating SHAP values) to show exactly which vitals (e.g., Blood Pressure vs. BMI) influenced the model's decision for a specific patient.
+- **Accuracy**: The model was tuned for high sensitivity (recall) to ensure no high-risk cases are missed in a clinical screening setting.
+- **Research**: Full training and evaluation logs are available in the `Heart Disease Risk Prediction for Women using Machine Learning.ipynb` notebook.
 
-## 📂 Project Structure
+## 🛠️ 3. Technologies Used
+- **Frontend**: React.js 18, CSS3 (Modern Glassmorphism & SaaS Design), NPM.
+- **Backend**: Python 3.9+, Flask (RESTful API), Joblib.
+- **Machine Learning**: XGBoost, Scikit-Learn, Pandas, NumPy.
+- **Dashboards**: Streamlit (Alternative UI), React (Premium UI).
+- **Database**: SQLite3 for historical persistence and analytics tracking.
+- **Visualization**: Plotly, SVG Gauges, CSS3 Animations.
 
-```text
-cardiowise/
-├── backend/                # Flask API & ML Pipeline
-│   ├── app.py              # Main Flask server & API logic
-│   ├── ml_model.py         # Model loading & inference wrapper
-│   ├── models/             # Trained .pkl models and scalers
-│   └── streamlit_app.py    # Alternative Streamlit dashboard
-├── frontend/               # React Application
-│   ├── src/
-│   │   ├── CardioWiseApp.jsx  # Main Dashboard Component
-│   │   └── CardioWise.css     # Premium UI styling
-│   └── public/
-├── database/               # SQLite storage
-└── README.md
+## 🏗️ 4. System Architecture
+```mermaid
+graph TD
+    A[Patient Vitals & History] --> B[React Frontend / Streamlit]
+    B --> C[Flask API Backend]
+    C --> D[Derived Feature Logic]
+    D --> E[XGBoost Model Inference]
+    E --> F[Risk Categorization]
+    F --> G[Clinical Advice & Nutrition Logic]
+    G --> H[SQLite Database Storage]
+    H --> B
 ```
 
-## 🚥 Quick Start
+## 🚀 5. Features
+- **Individual Risk Profiling**: Instant screening with real-time health indicator derivation.
+- **Batch Processing**: Upload CSV datasets to analyze multiple patient records (e.g., for research papers).
+- **Personalized Medical Protocol**: Automated medication and lifestyle recommendations.
+- **Dietary Integration**: Customized nutrition plans based on BMI and clinical risk.
+- **Clinical History**: Searchable database of past assessments.
 
-### 1. Backend Setup
+## 🚥 6. Setup Instructions
+
+### Backend & Streamlit
 ```bash
 cd backend
 pip install -r requirements.txt
-python app.py
+python app.py                   # Starts Flask API [Port 5000]
+streamlit run streamlit_app.py  # Starts Alternative UI [Port 8501]
 ```
-Server runs on: `http://localhost:5000`
 
-### 2. Frontend Setup
+### Frontend (React)
 ```bash
 cd frontend
 npm install
-npm dev
+npm run dev                    # Starts Premium UI [Port 3000]
 ```
 
-### 3. Alternative Dashboard (Streamlit)
-```bash
-streamlit run backend/streamlit_app.py
-```
-
-## 📊 Model Performance
-The XGBoost model was trained on a large cardiovascular dataset with balanced classes, achieving high accuracy and sensitivity for women's risk profiles.
-
-- **Model Type**: XGBoost Classifier
-- **Confidence Level**: 91%
-- **Clinical Derivations**: Menopause (Age-based), PCOS (Age/BMI/Glucose-based), Thyroid (BP/BMI-based).
-
-## 🛡️ Medical Disclaimer
-CardioWise is an educational AI screening tool. Results do not constitute a medical diagnosis. Always consult a qualified cardiologist for clinical decisions.
+## 📂 7. Project Files
+- `Heart Disease Risk Prediction for Women.ipynb`: Original research and model training.
+- `cardio_train.csv`: Core dataset.
+- `backend/models/`: Trained binaries (.pkl).
+- `database/predictions.db`: Historical data file.
 
 ---
-© 2026 CardioWise AI Research. All rights reserved.
+**Medical Disclaimer**: CardioWise is an educational AI screening tool. Results do not constitute a medical diagnosis. Always consult a qualified cardiologist.
