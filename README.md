@@ -46,22 +46,13 @@ graph TD
 - **Dietary Integration**: Customized nutrition plans based on BMI and clinical risk.
 - **Clinical History**: Searchable database of past assessments.
 
-## 🚥 6. Setup Instructions
+### 🚀 One-Click Setup (Windows)
+For the easiest experience, simply double-click the **`run_cardiowise.bat`** file in the root directory. This will:
+1. Verify your Python and Node.js installations.
+2. Automatically install all required dependencies.
+3. Launch the Flask API, React Frontend, and Streamlit Dashboard in separate windows.
 
-### Backend & Streamlit
-```bash
-cd backend
-pip install -r requirements.txt
-python app.py                   # Starts Flask API [Port 5000]
-streamlit run streamlit_app.py  # Starts Alternative UI [Port 8501]
-```
-
-### Frontend (React)
-```bash
-cd frontend
-npm install
-npm run dev                    # Starts Premium UI [Port 3000]
-```
+### 🚥 Manual Setup Instructions
 
 ## 📂 7. Project Files
 - `Heart Disease Risk Prediction for Women.ipynb`: Original research and model training.
