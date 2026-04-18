@@ -2,69 +2,88 @@
 
 ```
 cardiowise/
-├── backend/                     # Flask API & ML Backend
-│   ├── app.py                  # Original Flask application
-│   ├── app_enhanced.py         # Premium version with SHAP
-│   ├── streamlit_app.py        # Streamlit dashboard
-│   ├── models/                 # ML model files
-│   │   ├── heart_prediction_women_xgb.pkl
-│   │   ├── scaler_final.pkl
-│   │   └── features_final.pkl
-│   ├── requirements.txt         # Python dependencies
-│   └── setup_models.py        # Model setup helper
-├── frontend/                   # Web Interface
-│   ├── index.html             # Premium medical dashboard
-│   ├── static/                # CSS, JS, assets
-│   └── templates/             # HTML templates
-├── database/                   # Data Storage
-│   └── predictions.db         # SQLite database
-├── README_PREMIUM.md          # Premium documentation
-└── PROJECT_STRUCTURE.md        # This file
+├── backend/                     # Python Flask API & ML Engine
+│   ├── app.py                  # Core Flask API (Risk Analysis & History)
+│   ├── ml_model.py             # ML prediction logic & feature engineering
+│   ├── setup_models.py         # Script to initialize model files
+│   ├── streamlit_app.py        # Streamlit Research & Clinical UI
+│   ├── cardiowise.log          # Application execution logs
+│   ├── requirements.txt         # Python backend dependencies
+│   ├── models/                 # Serialized ML models
+│   │   ├── heart_prediction_women_xgb.pkl  # Trained XGBoost model
+│   │   ├── scaler_final.pkl                # Data normalization scaler
+│   │   └── features_final.pkl              # Feature definition list
+│   └── routes/                 # Modular API route handlers
+│       ├── analytics.py        # Stats and data visualization logic
+│       ├── auth.py             # Authentication endpoints (placeholder)
+│       ├── predict.py          # Real-time risk prediction routes
+│       └── reports.py          # Clinical report generation logic
+├── database/                   # Data Persistence
+│   └── predictions.db         # SQLite database for patient history
+├── frontend/                   # Main React Interface (CRA-based)
+│   ├── src/                    # React source code
+│   │   ├── CardioWiseApp.jsx   # Primary dashboard component
+│   │   ├── CardioWise.css      # Modern Glassmorphism styling
+│   │   └── index.js            # Entry point
+│   ├── public/                 # Static assets
+│   ├── package.json            # React dependencies & scripts
+│   └── react-app/              # Alternative Webpack-based Build
+│       ├── src/                # Source for webpack version
+│       ├── webpack.config.js    # Custom build configuration
+│       └── package.json        # Webpack build scripts
+├── sample_data/                # Research Data
+│   └── sample_batch_1-5.csv    # Simulated patient datasets for testing
+├── cardio_train.csv            # Original training dataset
+├── run_cardiowise.bat          # One-click Windows launch utility
+├── PROJECT_STRUCTURE.md        # This file
+├── README.md                   # Main documentation
+└── Heart Disease Risk Prediction for Women using Machine Learning.ipynb # Research Notebook
 ```
 
 ## 📁 Folder Responsibilities
 
-### **Backend/** 
-- Flask API server with CORS support
-- XGBoost ML model integration
-- SHAP explainability engine
-- Clinical advisory system
-- Database operations
-- Model loading and management
+### **backend/** 
+- **Flask API**: RESTful endpoints for real-time risk assessment.
+- **ML Engine**: XGBoost integration with gender-specific health markers.
+- **Clinical Advisory**: Logic for generating medication and lifestyle advice.
+- **Analytics**: Processing patient population data for trends.
+- **Streamlit**: Rapid research interface for clinicians.
 
-### **Frontend/**
-- Premium medical dashboard UI
-- Glassmorphism design system
-- Interactive forms and visualizations
-- Chart.js and Plotly integration
-- Responsive mobile-first design
-- Real-time API communication
+### **frontend/**
+- **Premium Dashboard**: Professional React-based UI with glassmorphism design.
+- **Data Visualization**: Interactive charts for risk factor contribution.
+- **Clinical Reports**: Frontend logic for displaying and exporting assessments.
+- **React-App Submodule**: Custom webpack configuration for optimized builds.
 
-### **Database/**
-- SQLite database for patient history
-- Prediction tracking and analytics
-- SHAP explanation storage
-- Clinical data persistence
+### **database/**
+- **Patient History**: Secure SQLite storage for all clinical assessments.
+- **Performance Tracking**: Monitoring API response times and accuracy.
+
+### **sample_data/**
+- **Batch Processing**: CSV files for testing bulk prediction endpoints.
 
 ## 🚀 Running the Application
 
-```bash
-# Start Premium Backend
-cd backend
-python app_enhanced.py
+### **1. Automatic Launch (Windows)**
+Double-click `run_cardiowise.bat` in the root folder.
 
-# Access at: http://localhost:5000
+### **2. Manual Backend Launch**
+```bash
+cd backend
+python -m pip install -r requirements.txt
+python app.py
 ```
 
-## 📊 Key Features by Component
+### **3. Manual Frontend Launch**
+```bash
+cd frontend
+npm install
+npm start
+```
 
-- **Backend**: AI predictions, SHAP explanations, clinical advice
-- **Frontend**: Premium UI, real-time forms, interactive charts
-- **Database**: Persistent storage, history tracking, analytics
+## 🔧 Architecture Principles
 
-## 🔧 Clean Architecture
-
-- **Separation of Concerns**: Clear frontend/backend distinction
-- **No Duplicates**: Removed archive and redundant files
-- **Organized Structure**: Logical grouping by functionality
-- **Production Ready**: Scalable and maintainable codebase
+- **Separation of Concerns**: Decoupled Flask backend and React frontend.
+- **Gender-Centric Design**: Features specifically engineered for women's physiology.
+- **Explainability (XAI)**: Integrated feature contribution analysis for transparency.
+- **Production Ready**: Optimized for scalability with logging and persistent storage.
